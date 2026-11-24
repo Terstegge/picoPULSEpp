@@ -1,0 +1,80 @@
+///////////////////////////////////////////////////////////////
+// SPDX-License-Identifier: MIT
+// SPDX-FileCopyrightText: 2026 Andreas Terstegge
+//
+// This file is part of picoprobe++
+// A CMSIS-DAP v2 firmware for RP2040/RP2350 based debug probes
+///////////////////////////////////////////////////////////////
+//
+// This file hides away all MCU specific header files
+//
+#ifndef BOARD_INCLUDES_H
+#define BOARD_INCLUDES_H
+
+#include "board.h"
+
+#ifdef RP2040
+#include "adc_rp2040.h"
+#define   adc_rp2xxx adc_rp2040
+#include "dma_rp2040.h"
+#define   dma_rp2xxx dma_rp2040
+#include "gpio_rp2040.h"
+#define   gpio_rp2xxx gpio_rp2040
+#include "unique_id_rp2040.h"
+#define   unique_id_rp2xxx unique_id_rp2040
+#include "uart_rp2040.h"
+#define   uart_rp2xxx uart_rp2040
+#include "pio_rp2040.h"
+#define   pio_rp2xxx pio_rp2040
+#include "system_rp2040.h"
+#define   system_rp2xxx system_rp2040
+#include "timer_rp2040.h"
+#define   timer_rp2xxx timer_rp2040
+#include "RP2040.h"
+#endif
+
+#ifdef RP2350
+#include "adc_rp2350.h"
+#define   adc_rp2xxx adc_rp2350
+#include "dma_rp2350.h"
+#define   dma_rp2xxx dma_rp2350
+#include "gpio_rp2350.h"
+#define   gpio_rp2xxx gpio_rp2350
+#include "unique_id_rp2350.h"
+#define   unique_id_rp2xxx unique_id_rp2350
+#include "uart_rp2350.h"
+#define   uart_rp2xxx uart_rp2350
+#include "pio_rp2350.h"
+#define   pio_rp2xxx pio_rp2350
+#include "system_rp2350.h"
+#define   system_rp2xxx system_rp2350
+#include "timer_rp2350.h"
+#define   timer_rp2xxx timer_rp2350
+#include "RP2350.h"
+#endif
+
+#ifdef YAHAL_BOARD_RPI_PICO
+#include "config_rpi_pico.h"
+#endif
+
+#ifdef YAHAL_BOARD_RPI_PICO2
+#include "config_rpi_pico2.h"
+#endif
+
+#ifdef YAHAL_BOARD_RPI_DEBUG_PROBE
+#include "config_rpi_debug_probe.h"
+#endif
+
+#ifdef YAHAL_BOARD_RP2040_LAUNCHPAD
+#include "config_rp2040_launchpad.h"
+#endif
+
+#ifdef YAHAL_BOARD_RP2350_LAUNCHPAD
+#include "config_rp2350_launchpad.h"
+#endif
+
+#ifdef YAHAL_BOARD_RP2xxx_LAUNCHPAD_PROBE
+#include "config_rp2xxx_launchpad_probe.h"
+#endif
+
+#endif // BOARD_INCLUDES_H
